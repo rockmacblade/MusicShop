@@ -125,6 +125,7 @@
 
                     <Button
                         android:id="@+id/minusButton"
+                        android:onClick="decreaseQuantity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -142,6 +143,7 @@
 
                     <Button
                         android:id="@+id/plusButton"
+                        android:onClick="increaseQuantity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
