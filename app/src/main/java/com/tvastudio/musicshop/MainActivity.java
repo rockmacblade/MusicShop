@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         quantity = quantity + 1;
         TextView quantityTextView = findViewById(R.id.textQuantity);
         quantityTextView.setText("" + quantity);
+        TextView priceTextView = findViewById(R.id.textOrderPrice);
+        priceTextView.setText("" + quantity * price +" $");
     }
 
     public void decreaseQuantity(View view) {
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         TextView quantityTextView = findViewById(R.id.textQuantity);
         quantityTextView.setText("" + quantity);
+        TextView priceTextView = findViewById(R.id.textOrderPrice);
+        priceTextView.setText("" + quantity * price +" $");
     }
 
     @Override
