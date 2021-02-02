@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -75,7 +76,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         TextView priceTextView = findViewById(R.id.textOrderPrice);
         priceTextView.setText("" + quantity * price +" $");
 
-    }
+        ImageView goodsImageView = findViewById(R.id.imageElement);
+
+        if (goodsName.equals("Guitar")){
+            goodsImageView.setImageResource(R.drawable.eguitar);
+        } else if (goodsName.equals("Ukulele")) {
+            goodsImageView.setImageResource(R.drawable.ukulele);
+        } else if (goodsName.equals("Violin")) {
+            goodsImageView.setImageResource(R.drawable.violin);
+        } else if (goodsName.equals("Piano")) {
+            goodsImageView.setImageResource(R.drawable.piano);
+        } else if (goodsName.equals("Drums")) {
+            goodsImageView.setImageResource(R.drawable.drums);
+        }
+
+        }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
