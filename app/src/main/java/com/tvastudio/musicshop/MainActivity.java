@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        createSpinner();
+
+        createMap();
+    }
+
+    void createSpinner () {
         spinner = findViewById(R.id.spinnerElements);
         spinner.setOnItemSelectedListener(this);
         spinnerArrayList = new ArrayList();
@@ -40,7 +46,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerArrayList);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
+    }
 
+    void createMap(){
         goodsMap = new HashMap();
 
         goodsMap.put("Guitar", 500.0);
@@ -78,17 +86,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         ImageView goodsImageView = findViewById(R.id.imageElement);
 
-        if (goodsName.equals("Guitar")){
-            goodsImageView.setImageResource(R.drawable.eguitar);
-        } else if (goodsName.equals("Ukulele")) {
-            goodsImageView.setImageResource(R.drawable.ukulele);
-        } else if (goodsName.equals("Violin")) {
-            goodsImageView.setImageResource(R.drawable.violin);
-        } else if (goodsName.equals("Piano")) {
-            goodsImageView.setImageResource(R.drawable.piano);
-        } else if (goodsName.equals("Drums")) {
-            goodsImageView.setImageResource(R.drawable.drums);
+        switch (goodsName){
+            case "Guitar":
+                goodsImageView.setImageResource(R.drawable.eguitar);
+                break;
+            case "Ukulele":
+                goodsImageView.setImageResource(R.drawable.ukulele);
+                break;
+            case "Violin":
+                goodsImageView.setImageResource(R.drawable.violin);
+                break;
+            case "Piano":
+                goodsImageView.setImageResource(R.drawable.piano);
+                break;
+            case "Drums":
+                goodsImageView.setImageResource(R.drawable.drums);
+                break;
         }
+
 
         }
 
