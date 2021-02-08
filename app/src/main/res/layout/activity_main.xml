@@ -156,7 +156,8 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/addButton"
+            android:id="@+id/addToCartButton"
+            android:onClick="addToCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

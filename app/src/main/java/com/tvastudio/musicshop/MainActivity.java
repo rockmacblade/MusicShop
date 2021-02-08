@@ -1,11 +1,13 @@
-package com.tvastudio.musicshop;
+ package com.tvastudio.musicshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -21,11 +23,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     HashMap goodsMap;
     String goodsName;
     double price;
+    EditText userNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        userNameEditText = findViewById(R.id.nameEditText);
 
         createSpinner();
 
@@ -110,5 +115,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void addToCart(View view) {
+
+        Order order = new Order();
+
+        order.userName = userNameEditText.getText().toString();
+        order.goodsName = goodsName;
+        order.quantity = quantity;
+        order.orderPrice = quantity*price;
     }
 }
